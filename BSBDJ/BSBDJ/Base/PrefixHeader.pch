@@ -1,0 +1,49 @@
+//
+//  PrefixHeader.pch
+//  备课-百思不得姐
+//
+//  Created by MJ Lee on 15/6/15.
+//  Copyright © 2015年 小码哥. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef DEBUG
+#define XMGLog(...) NSLog(__VA_ARGS__)
+#else
+#define XMGLog(...)
+#endif
+
+// 主请求路径
+#define XMGMainURL @"http://api.budejie.com/api/api_open.php"
+
+// 间距
+#define XMGCellMargin 10
+
+// 颜色
+#define XMGColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+// 全局色
+#define XMGGlobalColor XMGColor(229, 229, 229)
+
+#import <SVProgressHUD.h>
+#import "UIBarButtonItem+XMGExtension.h"
+#import "NSDate+Util.h"
+#import "UIView+XMGExtension.h"
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import <UIImageView+WebCache.h>
+
+
+typedef NS_ENUM(NSUInteger, XMGTopicsType) {
+    XMGTopicsTypeAll = 1, // 全部
+    XMGTopicsTypePicture = 10, // 图片
+    XMGTopicsTypeWord = 29, // 段子
+    XMGTopicsTypeVoice = 31, // 声音
+    XMGTopicsTypeVideo = 41 // 视频
+};
+
+#endif /* PrefixHeader_pch */
