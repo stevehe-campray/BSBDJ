@@ -36,6 +36,10 @@
 		748278F21D00083800CB10F1 /* BSBTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748278F11D00083800CB10F1 /* BSBTopic.swift */; };
 		748278F51D002D8900CB10F1 /* BSBTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748278F31D002D8900CB10F1 /* BSBTopicCell.swift */; };
 		748278F61D002D8900CB10F1 /* BSBTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 748278F41D002D8900CB10F1 /* BSBTopicCell.xib */; };
+		74BB1B231D193CAC009E279F /* BSBTopicVoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B221D193CAC009E279F /* BSBTopicVoiceView.swift */; };
+		74BB1B251D193CB8009E279F /* BSBTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B241D193CB8009E279F /* BSBTopicVoiceView.xib */; };
+		74BB1B271D194B58009E279F /* BSBTopicVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B261D194B58009E279F /* BSBTopicVideoView.swift */; };
+		74BB1B291D194B66009E279F /* BSBTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B281D194B66009E279F /* BSBTopicVideoView.xib */; };
 		74CA746C1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */; };
 		74CA746D1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */; };
 		74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */; };
@@ -119,6 +123,10 @@
 		748278F11D00083800CB10F1 /* BSBTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBTopic.swift; sourceTree = "<group>"; };
 		748278F31D002D8900CB10F1 /* BSBTopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBTopicCell.swift; sourceTree = "<group>"; };
 		748278F41D002D8900CB10F1 /* BSBTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBTopicCell.xib; sourceTree = "<group>"; };
+		74BB1B221D193CAC009E279F /* BSBTopicVoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBTopicVoiceView.swift; sourceTree = "<group>"; };
+		74BB1B241D193CB8009E279F /* BSBTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBTopicVoiceView.xib; sourceTree = "<group>"; };
+		74BB1B261D194B58009E279F /* BSBTopicVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBTopicVideoView.swift; sourceTree = "<group>"; };
+		74BB1B281D194B66009E279F /* BSBTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBTopicVideoView.xib; sourceTree = "<group>"; };
 		74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSBFriendTrendsViewController.xib; path = "BSBDJ/FriendTrends(关注)/Controllers/BSBFriendTrendsViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -302,6 +310,10 @@
 				748278F41D002D8900CB10F1 /* BSBTopicCell.xib */,
 				74F8953A1D01A11200FE0A2D /* BSBTopicPicView.swift */,
 				74F8953C1D01A11F00FE0A2D /* BSBTopicPicView.xib */,
+				74BB1B221D193CAC009E279F /* BSBTopicVoiceView.swift */,
+				74BB1B241D193CB8009E279F /* BSBTopicVoiceView.xib */,
+				74BB1B261D194B58009E279F /* BSBTopicVideoView.swift */,
+				74BB1B281D194B66009E279F /* BSBTopicVideoView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -665,7 +677,9 @@
 				748278F61D002D8900CB10F1 /* BSBTopicCell.xib in Resources */,
 				74F1A8601C9BAC060098F68F /* BSBEssenceSubTagCell.xib in Resources */,
 				7418BC011C96AA04007D822A /* Main.storyboard in Resources */,
+				74BB1B291D194B66009E279F /* BSBTopicVideoView.xib in Resources */,
 				74F1A8521C9A43A30098F68F /* BSBFriendTrendsCategoryCell.xib in Resources */,
+				74BB1B251D193CB8009E279F /* BSBTopicVoiceView.xib in Resources */,
 				74001B081D1152780025045C /* BSBPublishViewController.xib in Resources */,
 				7410F0F01CFEC26C00F94D70 /* BSBGudieView.xib in Resources */,
 			);
@@ -746,6 +760,7 @@
 				7418BC461C97AA32007D822A /* BSBNewViewController.swift in Sources */,
 				748278F51D002D8900CB10F1 /* BSBTopicCell.swift in Sources */,
 				74F1A8551C9A94070098F68F /* BSBRecommendUserCell.swift in Sources */,
+				74BB1B271D194B58009E279F /* BSBTopicVideoView.swift in Sources */,
 				7418BC601C97D872007D822A /* NSDate+Extension.m in Sources */,
 				748278F21D00083800CB10F1 /* BSBTopic.swift in Sources */,
 				7418BC501C97AB43007D822A /* BSBNavViewController.swift in Sources */,
@@ -765,6 +780,7 @@
 				74F1A85B1C9BA9030098F68F /* BSBSubscribeController.swift in Sources */,
 				74F1A84B1C9965090098F68F /* BSBrecomendViewController.swift in Sources */,
 				74CA746C1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift in Sources */,
+				74BB1B231D193CAC009E279F /* BSBTopicVoiceView.swift in Sources */,
 				74F8953B1D01A11200FE0A2D /* BSBTopicPicView.swift in Sources */,
 				7418BC611C97D872007D822A /* UIBarButtonItem+XMGExtension.m in Sources */,
 				7410F0EE1CFEC25C00F94D70 /* BSBGudieView.swift in Sources */,

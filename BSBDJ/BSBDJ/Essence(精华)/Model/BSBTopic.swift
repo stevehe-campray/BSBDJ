@@ -39,6 +39,21 @@ class BSBTopic: NSObject {
     //中图
     var image2 : NSString  = ""
     
+    //声音时长
+    var voicetime : NSString = ""
+    //播放次数
+    var playcount : NSString = ""
+    
+    //声音地址
+    var voiceuri : NSString = ""
+    //视频地址
+    var videouri : NSString = ""
+    //视频时长
+    var videotime : NSInteger = 0
+    
+    
+    
+    
     var type : NSInteger = 1
     
     var is_gif : Bool = false
@@ -51,6 +66,10 @@ class BSBTopic: NSObject {
     var topicpicimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
     
 
+    var topicvoiceimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
+    
+    var topicvoideimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
+    
     
     //字典数组转模型数组
     class func dict2Model(list: [[String: AnyObject]]) -> [BSBTopic] {
