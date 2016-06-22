@@ -44,6 +44,13 @@ class BSBTopicCell: UITableViewCell {
         return temtopicvoiceview
     }()
     
+    
+    lazy  var topicvideoview : BSBTopicVideoView  = { () -> BSBTopicVideoView in
+        let topicvideoview = BSBTopicVideoView.topicVideoView()
+        self.contentView.addSubview(topicvideoview)
+        return topicvideoview
+    }()
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -151,6 +158,7 @@ class BSBTopicCell: UITableViewCell {
                 //配置图片帖子
                 topicpicview.hidden = false
                 topicvoiceview.hidden = true
+                topicvideoview.hidden = true
                 let width :CGFloat = UIScreen.mainScreen().bounds.width - 40
                 var imageheight :CGFloat = CGFloat(Float((topicinfo?.height)! / (topicinfo?.width)!)) * width
                 if imageheight > 1000 {
@@ -168,7 +176,9 @@ class BSBTopicCell: UITableViewCell {
                 //配置声音帖子
                 topicvoiceview.hidden = false;
                 topicpicview.hidden = true
-                topicpicview.frame = (topicinfo?.topicpicimageFrame)!
+                topicvideoview.hidden = true
+//                topicpicview.frame = (topicinfo?.topicpicimageFrame)!
+//                topicvideoview.frame = (topicinfo?.topicvoideimageFrame)!
                 let width :CGFloat = UIScreen.mainScreen().bounds.width - 40
                 let imageheight :CGFloat = CGFloat(Float((topicinfo?.height)! / (topicinfo?.width)!)) * width
                 
@@ -177,9 +187,23 @@ class BSBTopicCell: UITableViewCell {
                 topicvoiceview.topic = topicinfo
                 topicvoiceview.frame = (topicinfo?.topicvoiceimageFrame)!
                 cellheight = cellheight + imageheight + 20
+            }else if(topicinfo?.type == 41){
+                 topicvideoview.hidden = false
+                topicpicview.hidden = true
+                topicvoiceview.hidden = true
+                let width :CGFloat = UIScreen.mainScreen().bounds.width - 40
+                let imageheight :CGFloat = CGFloat(Float((topicinfo?.height)! / (topicinfo?.width)!)) * width
+                
+                topicinfo?.topicvoideimageFrame = CGRectMake(10, cellheight - 44, width, imageheight)
+                
+                topicvideoview.topic = topicinfo
+                topicvideoview.frame = (topicinfo?.topicvoideimageFrame)!
+                cellheight = cellheight + imageheight + 20
+                
             }else{
                 topicpicview.hidden = true
                 topicvoiceview.hidden = true
+                topicvideoview.hidden = true
             }
             
             topicinfo?.cellHeight = cellheight

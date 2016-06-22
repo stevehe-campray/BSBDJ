@@ -24,6 +24,7 @@ class BSBTopicVoiceView: UIView {
         super.awakeFromNib()
         self.autoresizingMask = UIViewAutoresizing.None //这个view不被上一个view的改变而伸缩
         //
+        self.insertSubview(contentimageview, atIndex: 1)
     }
 
     var topic: BSBTopic?{
@@ -33,9 +34,16 @@ class BSBTopicVoiceView: UIView {
             }) { (image, error, cashtype, url) in
                 self.indecaterimageview.hidden = true;
             }
-        
-            playtimelabel.text = topic!.voicetime as String
-            playtimesLabel.text = topic!.playcount as String
+            let minute = topic!.voicetime / 60
+            let second = (topic?.voicetime)! % 60
+            let minutestr : String = String(minute)
+            let secondstr : String = String(second)
+            let voicetimestr : String = minutestr + ":" + secondstr
+            
+            playtimelabel.text = voicetimestr
+            
+            let playcountstr : String  = String(Int((topic?.playcount)!))
+            playtimesLabel.text = playcountstr + "播放"
             
         }
     }

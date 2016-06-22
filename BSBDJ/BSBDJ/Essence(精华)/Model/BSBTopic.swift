@@ -40,9 +40,9 @@ class BSBTopic: NSObject {
     var image2 : NSString  = ""
     
     //声音时长
-    var voicetime : NSString = ""
+    var voicetime : NSInteger = 0
     //播放次数
-    var playcount : NSString = ""
+    var playcount : NSInteger = 0
     
     //声音地址
     var voiceuri : NSString = ""
