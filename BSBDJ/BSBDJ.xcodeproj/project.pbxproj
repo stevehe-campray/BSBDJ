@@ -40,6 +40,8 @@
 		74BB1B251D193CB8009E279F /* BSBTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B241D193CB8009E279F /* BSBTopicVoiceView.xib */; };
 		74BB1B271D194B58009E279F /* BSBTopicVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B261D194B58009E279F /* BSBTopicVideoView.swift */; };
 		74BB1B291D194B66009E279F /* BSBTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B281D194B66009E279F /* BSBTopicVideoView.xib */; };
+		74BB1B2B1D1BBF9A009E279F /* BSBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B2A1D1BBF9A009E279F /* BSBUser.swift */; };
+		74BB1B2D1D1BC82D009E279F /* BSBComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B2C1D1BC82D009E279F /* BSBComment.swift */; };
 		74CA746C1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */; };
 		74CA746D1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */; };
 		74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */; };
@@ -127,6 +129,8 @@
 		74BB1B241D193CB8009E279F /* BSBTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBTopicVoiceView.xib; sourceTree = "<group>"; };
 		74BB1B261D194B58009E279F /* BSBTopicVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBTopicVideoView.swift; sourceTree = "<group>"; };
 		74BB1B281D194B66009E279F /* BSBTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBTopicVideoView.xib; sourceTree = "<group>"; };
+		74BB1B2A1D1BBF9A009E279F /* BSBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBUser.swift; sourceTree = "<group>"; };
+		74BB1B2C1D1BC82D009E279F /* BSBComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBComment.swift; sourceTree = "<group>"; };
 		74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSBFriendTrendsViewController.xib; path = "BSBDJ/FriendTrends(关注)/Controllers/BSBFriendTrendsViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -288,6 +292,8 @@
 			children = (
 				74F1A8611C9BAEE50098F68F /* BSBTagInfo.swift */,
 				748278F11D00083800CB10F1 /* BSBTopic.swift */,
+				74BB1B2A1D1BBF9A009E279F /* BSBUser.swift */,
+				74BB1B2C1D1BC82D009E279F /* BSBComment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -768,8 +774,10 @@
 				74F1A8621C9BAEE50098F68F /* BSBTagInfo.swift in Sources */,
 				7418BC441C97AA12007D822A /* BSBEssenceViewController.swift in Sources */,
 				7418BC4A1C97AA57007D822A /* BSBFriendTrendsViewController.swift in Sources */,
+				74BB1B2B1D1BBF9A009E279F /* BSBUser.swift in Sources */,
 				7418BC621C97D872007D822A /* UIView+XMGExtension.m in Sources */,
 				7418BC631C97D872007D822A /* UIViewController+XMGExtension.m in Sources */,
+				74BB1B2D1D1BC82D009E279F /* BSBComment.swift in Sources */,
 				74F1A8581C9A95C10098F68F /* BSBRecommendUser.swift in Sources */,
 				74F895391D0170BC00FE0A2D /* BSBTopicViewController.swift in Sources */,
 				7418BC541C97BF68007D822A /* BSBTabBar.swift in Sources */,

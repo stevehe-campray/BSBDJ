@@ -71,6 +71,12 @@ class BSBTopic: NSObject {
     var topicvoideimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
     
     
+    var top_cmt : [BSBComment] = []
+    
+   
+    
+    
+//     private var tagarray : [BSBTagInfo] = []
     //字典数组转模型数组
     class func dict2Model(list: [[String: AnyObject]]) -> [BSBTopic] {
         var models = [BSBTopic]()
@@ -81,13 +87,29 @@ class BSBTopic: NSObject {
         return models
     }
     
+    // setValuesForKeysWithDictionary内部会调用以下方法
+    override func setValue(value: AnyObject?, forKey key: String) {
+        
+        // 1.判断当前是否正在给微博字典中的user字典赋值
+        if "top_cmt" == key
+        {
+            // 2.根据user key对应的字典创建一个模型
+            top_cmt = BSBComment.dict2Model(value as! [[String : AnyObject]])
+            return
+        }
+        
+        // 3,调用父类方法, 按照系统默认处理
+        super.setValue(value, forKey: key)
+    }
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        
+    }
+    
     // 字典转模型
     init(dict: [String: AnyObject])
     {
         super.init()
         setValuesForKeysWithDictionary(dict)
     }
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
-        
-    }
+   
 }
