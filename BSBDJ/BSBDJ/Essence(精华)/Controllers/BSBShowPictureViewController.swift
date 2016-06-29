@@ -22,7 +22,7 @@ class BSBShowPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.bringSubviewToFront(self.backbutton)
-        
+//
         
         // 屏幕尺寸
         

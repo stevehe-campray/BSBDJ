@@ -71,8 +71,9 @@ class BSBTabBar: UITabBar {
     }
     
     func publishClick(btn : UIButton){
-        
-        self.window?.rootViewController?.presentViewController(BSBPublishViewController(), animated: false, completion: {
+    
+         let publishvc : BSBPublishViewController = BSBPublishViewController(nibName: "BSBPublishViewController",bundle: nil)
+        self.window?.rootViewController?.presentViewController(publishvc, animated: false, completion: {
             
         });
     }

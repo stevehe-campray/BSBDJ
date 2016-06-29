@@ -11,6 +11,9 @@ import UIKit
 class BSBTopicCell: UITableViewCell {
 
 
+
+    @IBOutlet weak var cemtentLabels: UILabel!
+    @IBOutlet weak var contentview: UIView!
     
     @IBOutlet weak var nameLable: UILabel!
 
@@ -38,9 +41,6 @@ class BSBTopicCell: UITableViewCell {
         return temtopicpicview
     }()
     
-    
-    
-    
     lazy  var topicvoiceview : BSBTopicVoiceView  = { () -> BSBTopicVoiceView in
         let temtopicvoiceview = BSBTopicVoiceView.topicVoiceView()
         self.contentView.addSubview(temtopicvoiceview)
@@ -64,6 +64,7 @@ class BSBTopicCell: UITableViewCell {
         super.awakeFromNib()
         
         self.contentLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 40
+        self.cemtentLabels.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 40
         let bgView = UIImageView()
         
         bgView.image = UIImage(named:"mainCellBackground")
@@ -153,10 +154,31 @@ class BSBTopicCell: UITableViewCell {
             
             
             contentLabel.text = topicinfo?.text as? String
+            
+            var cmetentH = CGRectGetHeight(contentview.frame)
+            if topicinfo!.top_cmt.count > 0 {
+                contentview.hidden = false;
+                var contentstr : String = String()
+                for cmt in (topicinfo?.top_cmt)! {
+                    let user : BSBUser = cmt.user!
+                    contentstr = contentstr + (user.username as String)  + " : " + (cmt.content as String) + "\n"
+                    
+                }
+                //移除最后追加的一个换行符
+                let endindex : Int = contentstr.characters.count
+                let str =    (contentstr as NSString).substringToIndex(endindex - 1)
+                cemtentLabels.text = str
+                
+                self.layoutIfNeeded()
+                cmetentH = CGRectGetHeight(cemtentLabels.frame) + 10 + 17
+            }else{
+                contentview.hidden = true;
+                cmetentH = 0
+            }
+            
             self.layoutIfNeeded()
-            
             var cellheight : CGFloat = CGRectGetMaxY(contentLabel.frame) + 20 + 44
-            
+           
             if topicinfo?.type == 10 {
                 //配置图片帖子
                 topicpicview.hidden = false
@@ -173,7 +195,11 @@ class BSBTopicCell: UITableViewCell {
                  topicinfo?.topicpicimageFrame = CGRectMake(10, cellheight - 44, width, imageheight)
                 topicpicview.topic = topicinfo
                 topicpicview.frame = (topicinfo?.topicpicimageFrame)!
+                
+                
+                
                 cellheight = cellheight + imageheight + 20
+                
                 
             }else if(topicinfo?.type == 31){
                 //配置声音帖子
@@ -209,6 +235,7 @@ class BSBTopicCell: UITableViewCell {
                 topicvideoview.hidden = true
             }
             
+            cellheight = cellheight + cmetentH
             topicinfo?.cellHeight = cellheight
         }
     }

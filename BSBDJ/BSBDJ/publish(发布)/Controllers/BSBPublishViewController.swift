@@ -11,11 +11,20 @@ import UIKit
 class BSBPublishViewController: UIViewController {
     var buttonarray :[UIButton] = []
     
+    @IBOutlet weak var cancelButton: UIButton!
+    
     var logvimageview : UIImageView?
     
+    override func awakeFromNib() {
+            super.awakeFromNib()
+         self.view.insertSubview(cancelButton, atIndex: 1) 
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.awakeFromNib();
+        
         let titlearray = ["发视频","发图片","发段子","发声音","审帖","发链接"]
         let imagenamearray = ["publish-video","publish-picture","publish-text","publish-audio","publish-review","publish-offline"]
         
