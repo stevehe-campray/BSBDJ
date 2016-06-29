@@ -9,6 +9,10 @@
 import UIKit
 
 class BSBTopic: NSObject {
+    
+    /** 帖子id */
+    var id : NSString = ""
+    
     /** 名称 */
     var name : NSString = ""
     /** 头像 */
@@ -62,6 +66,9 @@ class BSBTopic: NSObject {
     /** 辅助计算cell高度 */
     var cellHeight : CGFloat = 0;
     
+    
+     var commentH : CGFloat = 0//最热评论高度
+    
     /** 图片的frame*/
     var topicpicimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
     
@@ -69,6 +76,8 @@ class BSBTopic: NSObject {
     var topicvoiceimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
     
     var topicvoideimageFrame : CGRect = CGRectMake(0, 0, 0, 0)
+    
+    
     
     
     var top_cmt : [BSBComment] = []

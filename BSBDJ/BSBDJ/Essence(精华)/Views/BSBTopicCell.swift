@@ -33,6 +33,8 @@ class BSBTopicCell: UITableViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
     
+    var commentH : CGFloat = CGFloat()//最热评论高度
+    
     
     lazy  var topicpicview : BSBTopicPicView  = { () -> BSBTopicPicView in
         
@@ -234,8 +236,9 @@ class BSBTopicCell: UITableViewCell {
                 topicvoiceview.hidden = true
                 topicvideoview.hidden = true
             }
-            
+            commentH = cmetentH
             cellheight = cellheight + cmetentH
+            topicinfo?.commentH = cmetentH
             topicinfo?.cellHeight = cellheight
         }
     }

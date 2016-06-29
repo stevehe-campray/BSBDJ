@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let button = UIButton(frame:CGRect(x: 50, y: 100, width: 50, height: 50))
-        button.addTarget(self, action:"buttonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action:#selector(ViewController.buttonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         button.backgroundColor = UIColor.whiteColor();
         self.view.addSubview(button)
         

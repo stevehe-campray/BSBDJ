@@ -133,6 +133,16 @@ class BSBTopicViewController: UITableViewController {
     }
     
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("111");
+        let topicinfo = datasource[indexPath.row]
+        
+           let commentvc : BSBCommentViewController = BSBCommentViewController(nibName: "BSBCommentViewController",bundle: nil)
+        commentvc.topicinfo = topicinfo
+        self.navigationController?.pushViewController(commentvc, animated: true)
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
 //        
