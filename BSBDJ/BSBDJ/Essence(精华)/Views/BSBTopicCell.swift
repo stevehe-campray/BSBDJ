@@ -32,10 +32,13 @@ class BSBTopicCell: UITableViewCell {
     
     
     lazy  var topicpicview : BSBTopicPicView  = { () -> BSBTopicPicView in
+        
         let temtopicpicview = BSBTopicPicView.topicpicview()
         self.contentView.addSubview(temtopicpicview)
         return temtopicpicview
     }()
+    
+    
     
     
     lazy  var topicvoiceview : BSBTopicVoiceView  = { () -> BSBTopicVoiceView in

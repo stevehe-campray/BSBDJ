@@ -82,10 +82,8 @@ class BSBTopicViewController: UITableViewController {
             let maxtimes = dic .valueForKey("maxtime") as!NSString
             self.maxtime = maxtimes
             //             = maxtime
-            print(jsonrequestobject)
             let models:[BSBTopic] = BSBTopic.dict2Model(jsonrequestobject!["list"] as! [[String:AnyObject]])
             for  model in models{
-                
                 self.datasource.append(model)
             }
             self.tableView.mj_header.endRefreshing()
