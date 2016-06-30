@@ -22,9 +22,14 @@ class BSBComment: NSObject {
     
     var voicetime : NSInteger = 0;
     
+    //声音来源地址
+    var voiceuri : NSString = ""
+    
     var content : NSString = ""
     
     var like_count : NSInteger = 0
+    
+    var commentH : CGFloat = 0//最热评论高度
     
     var user : BSBUser?
     
@@ -43,7 +48,10 @@ class BSBComment: NSObject {
     {
         super.init()
         setValuesForKeysWithDictionary(dict)
+        
     }
+    
+    
     override func setValue(value: AnyObject?, forKey key: String) {
         // 1.判断当前是否正在给微博字典中的user字典赋值
         if "user" == key
@@ -56,6 +64,7 @@ class BSBComment: NSObject {
         super.setValue(value, forKey: key)
     }
     
+    //过滤没有的字段
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }

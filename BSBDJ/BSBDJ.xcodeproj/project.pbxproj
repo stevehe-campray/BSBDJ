@@ -45,6 +45,8 @@
 		74BB1B351D239C54009E279F /* BSBCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B331D239C54009E279F /* BSBCommentViewController.swift */; };
 		74BB1B361D239C54009E279F /* BSBCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B341D239C54009E279F /* BSBCommentViewController.xib */; };
 		74BB1B391D23C48F009E279F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B3B1D23C48F009E279F /* InfoPlist.strings */; };
+		74BB1B421D24C803009E279F /* BSBCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B401D24C803009E279F /* BSBCommentCell.swift */; };
+		74BB1B431D24C803009E279F /* BSBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B411D24C803009E279F /* BSBCommentCell.xib */; };
 		74CA746C1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */; };
 		74CA746D1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */; };
 		74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */; };
@@ -138,6 +140,8 @@
 		74BB1B341D239C54009E279F /* BSBCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBCommentViewController.xib; sourceTree = "<group>"; };
 		74BB1B3A1D23C48F009E279F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		74BB1B3F1D23C4CA009E279F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		74BB1B401D24C803009E279F /* BSBCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBCommentCell.swift; sourceTree = "<group>"; };
+		74BB1B411D24C803009E279F /* BSBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBCommentCell.xib; sourceTree = "<group>"; };
 		74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSBFriendTrendsViewController.xib; path = "BSBDJ/FriendTrends(关注)/Controllers/BSBFriendTrendsViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -330,6 +334,8 @@
 				74BB1B241D193CB8009E279F /* BSBTopicVoiceView.xib */,
 				74BB1B261D194B58009E279F /* BSBTopicVideoView.swift */,
 				74BB1B281D194B66009E279F /* BSBTopicVideoView.xib */,
+				74BB1B401D24C803009E279F /* BSBCommentCell.swift */,
+				74BB1B411D24C803009E279F /* BSBCommentCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74001B041D1143750025045C /* BSBShowPictureViewController.xib in Resources */,
+				74BB1B431D24C803009E279F /* BSBCommentCell.xib in Resources */,
 				74F1A85C1C9BA9030098F68F /* BSBSubscribeController.xib in Resources */,
 				74F1A84C1C9965090098F68F /* BSBrecomendViewController.xib in Resources */,
 				74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */,
@@ -791,6 +798,7 @@
 				7418BC621C97D872007D822A /* UIView+XMGExtension.m in Sources */,
 				7418BC631C97D872007D822A /* UIViewController+XMGExtension.m in Sources */,
 				74BB1B2D1D1BC82D009E279F /* BSBComment.swift in Sources */,
+				74BB1B421D24C803009E279F /* BSBCommentCell.swift in Sources */,
 				74F1A8581C9A95C10098F68F /* BSBRecommendUser.swift in Sources */,
 				74F895391D0170BC00FE0A2D /* BSBTopicViewController.swift in Sources */,
 				7418BC541C97BF68007D822A /* BSBTabBar.swift in Sources */,

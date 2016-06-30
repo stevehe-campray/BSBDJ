@@ -60,7 +60,6 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
         parameter.setValue("1", forKey:"hot")
         
         manager.GET("http://api.budejie.com/api/api_open.php", parameters: parameter, success: { (_, responseObj) in
-            print(responseObj)
             self.page = 0
             self.hotcomment.removeAll()
             self.lastcomment.removeAll()
@@ -78,15 +77,7 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
             }) { (_, error) in
             self.commetTableview.mj_header.endRefreshing()
         }
-//        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//        params[@"a"] = @"dataList";
-//        params[@"c"] = @"comment";
-//        params[@"data_id"] = self.topic.ID;
-//        params[@"hot"] = @"1";
-//        
-//        [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-//        
-//        
+       
     }
     
     
@@ -113,15 +104,13 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
         
         header.addSubview(topicCell)
        
-        
-        
-        
         self.commetTableview.tableHeaderView = header
         
         let footer = UIView()
         self.commetTableview.tableFooterView = footer
         
         
+        self.commetTableview.registerNib(UINib(nibName: "BSBCommentCell", bundle: nil), forCellReuseIdentifier: "commentid")
         
     }
     func setUpnavgation(){
@@ -147,26 +136,31 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
         }
     
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        let label = UILabel()
+        header.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.8)
+        label.xmg_width = 100
+        label.xmg_x = 10
+        label.font = UIFont.systemFontOfSize(14)
+        label.textColor = UIColor.grayColor()
+        label.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        header.addSubview(label)
         if section == 0 {
             if hotcomment.count > 0 {
-                return "最热评论"
+                label.text = "最热评论"
             }else{
-                return "最新评论"
+                label.text = "最新评论"
             }
         }else{
-            return "最新评论"
+                label.text = "最新评论"
         }
+    
+    return header
+        
     }
     
-//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label : UILabel = UILabel()
-//        
-//        label.text = "最热评论"
-//        return nil
-//        
-//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -179,11 +173,40 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
             return lastcomment.count
         }
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let  comment : BSBComment
+        if indexPath.section == 0 {
+            if hotcomment.count > 0 {
+                comment = hotcomment[indexPath.row]
+            }else{
+                comment = lastcomment[indexPath.row]
+            }
+        }else{
+            comment = lastcomment[indexPath.row]
+        }
+        return comment.commentH
+    }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell  : UITableViewCell = UITableViewCell()
-        cell.textLabel?.text = "11111"
+        let cell  = tableView.dequeueReusableCellWithIdentifier("commentid" ) as! BSBCommentCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        if indexPath.section == 0 {
+            if hotcomment.count > 0 {
+                cell.comment = hotcomment[indexPath.row]
+            }else{
+                cell.comment = lastcomment[indexPath.row]
+            }
+        }else{
+                cell.comment = lastcomment[indexPath.row]
+        }
         return cell
     }
+    
+    
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if lastcomment.count > 0 && hotcomment.count > 0 {
             return 2
