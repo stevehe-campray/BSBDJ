@@ -60,7 +60,8 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
         parameter.setValue("1", forKey:"hot")
         
         manager.GET("http://api.budejie.com/api/api_open.php", parameters: parameter, success: { (_, responseObj) in
-            self.page = 0
+         
+            self.page = 2
             self.hotcomment.removeAll()
             self.lastcomment.removeAll()
             let hotmodels:[BSBComment] = BSBComment.dict2Model(responseObj!["hot"] as! [[String:AnyObject]])
@@ -72,6 +73,31 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
                 self.lastcomment.append(model)
             }
             self.commetTableview.reloadData()
+        
+            //处理一个字段返回类型不一致
+            
+            if self.topicinfo?.type == 29{
+                let total  = responseObj!["total"] as! NSInteger
+                
+                if self.lastcomment.count >= total{ // 全部加载完毕
+                    self.commetTableview.mj_footer.hidden = true
+                } else {
+                    // 结束刷新状态
+                    self.commetTableview.mj_footer.hidden = false
+                }
+
+
+            }else{
+              let  total  = responseObj!["total"] as! String
+    
+                if self.lastcomment.count >= Int(total){ // 全部加载完毕
+                    self.commetTableview.mj_footer.hidden = true
+                } else {
+                    // 结束刷新状态
+                    self.commetTableview.mj_footer.hidden = false
+                }
+
+            }
             self.commetTableview.mj_header.endRefreshing()
     
             }) { (_, error) in
@@ -83,6 +109,53 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
     
     //加载更多
     func loadMoreComment(){
+        let manager = AFHTTPSessionManager()
+        manager.requestSerializer.timeoutInterval = 20.0
+        let parameter = NSMutableDictionary()
+        parameter.setValue("dataList", forKey: "a")
+        parameter.setValue("comment", forKey: "c")
+        parameter.setValue(self.topicinfo?.id, forKey:"data_id")
+        parameter.setValue(page, forKey: "page")
+        let comment : BSBComment = self.lastcomment.last!
+        parameter.setValue(comment.id, forKey: "lastcid")
+        
+        manager.GET("http://api.budejie.com/api/api_open.php", parameters: parameter, success: { (_, responseObj) in
+                self.page = self.page + 1
+                let lastmodels:[BSBComment] = BSBComment.dict2Model(responseObj!["data"] as! [[String:AnyObject]])
+                for  model in lastmodels{
+                    self.lastcomment.append(model)
+                }
+                self.commetTableview.reloadData()
+            
+            //处理一个字段返回类型不一致
+            
+            if self.topicinfo?.type == 29{
+                let total  = responseObj!["total"] as! NSInteger
+                
+                if self.lastcomment.count >= total{ // 全部加载完毕
+                    self.commetTableview.mj_footer.hidden = true
+                } else {
+                    // 结束刷新状态
+                     self.commetTableview.mj_footer.endRefreshing()
+                }
+                
+                
+            }else{
+                let  total  = responseObj!["total"] as! String
+                
+                if self.lastcomment.count >= Int(total){ // 全部加载完毕
+                    self.commetTableview.mj_footer.hidden = true
+                } else {
+                    // 结束刷新状态
+                    self.commetTableview.mj_footer.endRefreshing()
+
+                }
+                
+            }
+            
+            }) { (_, error) in
+                self.commetTableview.mj_footer.endRefreshing()
+            }
         
     }
     

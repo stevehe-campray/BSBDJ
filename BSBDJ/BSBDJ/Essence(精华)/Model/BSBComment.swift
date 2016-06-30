@@ -22,6 +22,9 @@ class BSBComment: NSObject {
     
     var voicetime : NSInteger = 0;
     
+    //评论id
+    var id : NSString = ""
+    
     //声音来源地址
     var voiceuri : NSString = ""
     
