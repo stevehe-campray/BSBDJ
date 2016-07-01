@@ -47,6 +47,10 @@
 		74BB1B391D23C48F009E279F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B3B1D23C48F009E279F /* InfoPlist.strings */; };
 		74BB1B421D24C803009E279F /* BSBCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B401D24C803009E279F /* BSBCommentCell.swift */; };
 		74BB1B431D24C803009E279F /* BSBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B411D24C803009E279F /* BSBCommentCell.xib */; };
+		74BB1B451D263D28009E279F /* BSBMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B441D263D28009E279F /* BSBMeCell.swift */; };
+		74BB1B471D26463C009E279F /* BSBMeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B461D26463C009E279F /* BSBMeFooterView.swift */; };
+		74BB1B491D2649E2009E279F /* BSBSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B481D2649E2009E279F /* BSBSquare.swift */; };
+		74BB1B4B1D26510A009E279F /* BSBSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B4A1D26510A009E279F /* BSBSquareButton.swift */; };
 		74CA746C1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */; };
 		74CA746D1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */; };
 		74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */; };
@@ -142,6 +146,10 @@
 		74BB1B3F1D23C4CA009E279F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		74BB1B401D24C803009E279F /* BSBCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBCommentCell.swift; sourceTree = "<group>"; };
 		74BB1B411D24C803009E279F /* BSBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBCommentCell.xib; sourceTree = "<group>"; };
+		74BB1B441D263D28009E279F /* BSBMeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBMeCell.swift; sourceTree = "<group>"; };
+		74BB1B461D26463C009E279F /* BSBMeFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBMeFooterView.swift; sourceTree = "<group>"; };
+		74BB1B481D2649E2009E279F /* BSBSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBSquare.swift; sourceTree = "<group>"; };
+		74BB1B4A1D26510A009E279F /* BSBSquareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBSquareButton.swift; sourceTree = "<group>"; };
 		74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSBFriendTrendsViewController.xib; path = "BSBDJ/FriendTrends(关注)/Controllers/BSBFriendTrendsViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -492,6 +500,7 @@
 		7418BC401C97A9BE007D822A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				74BB1B481D2649E2009E279F /* BSBSquare.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,6 +515,9 @@
 		7418BC421C97A9BE007D822A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				74BB1B441D263D28009E279F /* BSBMeCell.swift */,
+				74BB1B461D26463C009E279F /* BSBMeFooterView.swift */,
+				74BB1B4A1D26510A009E279F /* BSBSquareButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -781,11 +793,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7418BBFE1C96AA04007D822A /* ViewController.swift in Sources */,
+				74BB1B451D263D28009E279F /* BSBMeCell.swift in Sources */,
 				74001B031D1143750025045C /* BSBShowPictureViewController.swift in Sources */,
 				74F1A84E1C9A422D0098F68F /* BSBCategory.swift in Sources */,
 				7418BC461C97AA32007D822A /* BSBNewViewController.swift in Sources */,
 				748278F51D002D8900CB10F1 /* BSBTopicCell.swift in Sources */,
 				74F1A8551C9A94070098F68F /* BSBRecommendUserCell.swift in Sources */,
+				74BB1B471D26463C009E279F /* BSBMeFooterView.swift in Sources */,
 				74BB1B271D194B58009E279F /* BSBTopicVideoView.swift in Sources */,
 				7418BC601C97D872007D822A /* NSDate+Extension.m in Sources */,
 				748278F21D00083800CB10F1 /* BSBTopic.swift in Sources */,
@@ -793,6 +807,7 @@
 				7418BC4C1C97AA66007D822A /* BSBMeViewController.swift in Sources */,
 				74F1A8621C9BAEE50098F68F /* BSBTagInfo.swift in Sources */,
 				7418BC441C97AA12007D822A /* BSBEssenceViewController.swift in Sources */,
+				74BB1B4B1D26510A009E279F /* BSBSquareButton.swift in Sources */,
 				7418BC4A1C97AA57007D822A /* BSBFriendTrendsViewController.swift in Sources */,
 				74BB1B2B1D1BBF9A009E279F /* BSBUser.swift in Sources */,
 				7418BC621C97D872007D822A /* UIView+XMGExtension.m in Sources */,
@@ -812,6 +827,7 @@
 				74BB1B231D193CAC009E279F /* BSBTopicVoiceView.swift in Sources */,
 				74F8953B1D01A11200FE0A2D /* BSBTopicPicView.swift in Sources */,
 				7418BC611C97D872007D822A /* UIBarButtonItem+XMGExtension.m in Sources */,
+				74BB1B491D2649E2009E279F /* BSBSquare.swift in Sources */,
 				7410F0EE1CFEC25C00F94D70 /* BSBGudieView.swift in Sources */,
 				74F1A8511C9A43A30098F68F /* BSBFriendTrendsCategoryCell.swift in Sources */,
 				7402E3811CAD1C3D00EDB0AA /* BSBVerticalButton.swift in Sources */,

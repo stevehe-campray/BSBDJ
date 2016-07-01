@@ -39,6 +39,7 @@
 #import <POP.h>
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
+#import <UIButton+WebCache.h>
 
 typedef NS_ENUM(NSUInteger, XMGTopicsType) {
     XMGTopicsTypeAll = 1, // 全部

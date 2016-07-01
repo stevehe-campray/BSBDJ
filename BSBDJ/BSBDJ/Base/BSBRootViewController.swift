@@ -79,7 +79,7 @@ class BSBRootViewController: UITabBarController {
         //设置关注控制器
         setoneViewConroller(BSBFriendTrendsViewController(nibName:"BSBFriendTrendsViewController", bundle:nil), title: "关注", imageName: "tabBar_friendTrends_icon", selectImageName: "tabBar_friendTrends_click_icon")
         //设置个人中心控制器
-        setoneViewConroller(BSBMeViewController(), title: "我", imageName: "tabBar_me_icon", selectImageName: "tabBar_me_click_icon");
+        setoneViewConroller(BSBMeViewController(style: UITableViewStyle.Grouped), title: "我", imageName: "tabBar_me_icon", selectImageName: "tabBar_me_click_icon");
         
     }
     
