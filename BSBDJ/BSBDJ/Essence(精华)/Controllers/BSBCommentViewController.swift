@@ -76,28 +76,38 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
         
             //处理一个字段返回类型不一致
             
-            if self.topicinfo?.type == 29{
-                let total  = responseObj!["total"] as! NSInteger
-                
-                if self.lastcomment.count >= total{ // 全部加载完毕
-                    self.commetTableview.mj_footer.hidden = true
-                } else {
-                    // 结束刷新状态
-                    self.commetTableview.mj_footer.hidden = false
-                }
+//            if self.topicinfo?.type == 29{
+//                let total  = responseObj!["total"] as! NSInteger
+//                
+//                if self.lastcomment.count >= total{ // 全部加载完毕
+//                    self.commetTableview.mj_footer.hidden = true
+//                } else {
+//                    // 结束刷新状态
+//                    self.commetTableview.mj_footer.hidden = false
+//                }
+//
+//
+//            }else{
+//              let  total  = responseObj!["total"] as!
+//    
+//                if self.lastcomment.count >= Int(total){ // 全部加载完毕
+//                    self.commetTableview.mj_footer.hidden = true
+//                } else {
+//                    // 结束刷新状态
+//                    self.commetTableview.mj_footer.hidden = false
+//                }
+//                
+//            }
+//            let  total  = responseObj!["total"] as! NSNumber
+//
+//            
+//            if self.lastcomment.count >= Int(total){ // 全部加载完毕
+//                self.commetTableview.mj_footer.hidden = true
+//            } else {
+//                // 结束刷新状态
+//                self.commetTableview.mj_footer.hidden = false
+//            }
 
-
-            }else{
-              let  total  = responseObj!["total"] as! String
-    
-                if self.lastcomment.count >= Int(total){ // 全部加载完毕
-                    self.commetTableview.mj_footer.hidden = true
-                } else {
-                    // 结束刷新状态
-                    self.commetTableview.mj_footer.hidden = false
-                }
-
-            }
             self.commetTableview.mj_header.endRefreshing()
     
             }) { (_, error) in
@@ -128,30 +138,8 @@ class BSBCommentViewController: UIViewController,UITableViewDelegate,UITableView
                 self.commetTableview.reloadData()
             
             //处理一个字段返回类型不一致
-            
-            if self.topicinfo?.type == 29{
-                let total  = responseObj!["total"] as! NSInteger
-                
-                if self.lastcomment.count >= total{ // 全部加载完毕
-                    self.commetTableview.mj_footer.hidden = true
-                } else {
-                    // 结束刷新状态
-                     self.commetTableview.mj_footer.endRefreshing()
-                }
-                
-                
-            }else{
-                let  total  = responseObj!["total"] as! String
-                
-                if self.lastcomment.count >= Int(total){ // 全部加载完毕
-                    self.commetTableview.mj_footer.hidden = true
-                } else {
-                    // 结束刷新状态
-                    self.commetTableview.mj_footer.endRefreshing()
 
-                }
-                
-            }
+              self.commetTableview.mj_footer.endRefreshing()
             
             }) { (_, error) in
                 self.commetTableview.mj_footer.endRefreshing()

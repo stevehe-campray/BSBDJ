@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BSBNewViewController: UIViewController {
+class BSBNewViewController: BSBEssenceViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class BSBNewViewController: UIViewController {
     }
     
     
-    func setUpNavgationBar(){
+    override func setUpNavgationBar(){
         
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
         let leftbutton = UIButton()
@@ -35,7 +35,7 @@ class BSBNewViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftbutton)
     }
     
-    func menuclick(){
+   override func menuclick(){
         print("23323131231")
     }
 

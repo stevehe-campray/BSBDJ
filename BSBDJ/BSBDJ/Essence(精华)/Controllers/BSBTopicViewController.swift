@@ -25,6 +25,9 @@ class BSBTopicViewController: UITableViewController {
     internal var type  = XMGTopicsType.XMGTopicsTypeAll
     var nib = UINib()
     
+    var lastindex : NSInteger = 0
+    
+    
     var page : NSInteger = 0
     var maxtime :NSString = ""
     
@@ -38,11 +41,23 @@ class BSBTopicViewController: UITableViewController {
         self.tableView.registerNib(nib, forCellReuseIdentifier:"topics")
         self.tableView.backgroundColor = UIColor.clearColor()
         //        self .loadNewTopic()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BSBTopicViewController.tabarselected), name: "tabarselect", object: nil)
         self.setUpRefresh()
         
         
     }
     
+    func tabarselected(){
+        if self.lastindex == self.tabBarController?.selectedIndex && self.view.isShowingOnKeyWindow() {
+            self.tableView.mj_header.beginRefreshing()
+        }
+        self.lastindex = (self.tabBarController?.selectedIndex)!
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,8 +86,19 @@ class BSBTopicViewController: UITableViewController {
         let manager = AFHTTPSessionManager()
         manager.requestSerializer.timeoutInterval = 20.0
         let parameter = NSMutableDictionary()
+        let parentvc = self.parentViewController
+        
+        if parentvc!.isKindOfClass(BSBNewViewController){
+            parameter.setValue("newlist", forKey: "a")
 
-        parameter.setValue("list", forKey: "a")
+        }else{
+            parameter.setValue("list", forKey: "a")
+
+        }
+        
+        
+        
+        
         parameter.setValue("data", forKey: "c")
         parameter.setValue(self.type.rawValue, forKey:"type")
         manager.GET(XMGMainURL, parameters: parameter, success: { (_, jsonrequestobject) -> Void in
@@ -99,7 +125,17 @@ class BSBTopicViewController: UITableViewController {
         let manager = AFHTTPSessionManager()
         manager.requestSerializer.timeoutInterval = 20.0
         let parameter = NSMutableDictionary()
-        parameter.setValue("list", forKey: "a")
+//        parameter.setValue("list", forKey: "a")
+        
+        let parentvc = self.parentViewController
+        if parentvc!.isKindOfClass(BSBNewViewController){
+            parameter.setValue("newlist", forKey: "a")
+            
+        }else{
+            parameter.setValue("list", forKey: "a")
+            
+        }
+        
         parameter.setValue("data", forKey: "c")
         parameter.setValue(self.type.rawValue, forKey:"type")
         parameter.setValue(self.page, forKey: "page")

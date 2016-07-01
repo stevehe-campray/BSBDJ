@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,UITabBarControllerDelegate{
 
     var window: UIWindow?
 
@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        window?.rootViewController = BSBRootViewController()
+        let rootvc = BSBRootViewController()
+        rootvc.delegate = self
+        window?.rootViewController = rootvc
         window?.makeKeyAndVisible()
         
         let key = "CFBundleShortVersionString"
@@ -42,6 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         return true
+    }
+    
+    
+    //点击2次
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("tabarselect", object: nil, userInfo: nil)
+        
     }
     
     

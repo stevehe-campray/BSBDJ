@@ -36,7 +36,8 @@ class BSBTopicPicView: UIView {
  
    @IBAction  func pictureshow(){
     
-    let showpicvc = BSBShowPictureViewController()
+//    let showpicvc = BSBShowPictureViewController()
+      let showpicvc : BSBShowPictureViewController = BSBShowPictureViewController(nibName: "BSBShowPictureViewController",bundle: nil)
     showpicvc.topicinfo = topic
     
     UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(showpicvc, animated: true, completion: nil)

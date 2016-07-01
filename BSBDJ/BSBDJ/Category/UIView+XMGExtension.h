@@ -17,4 +17,7 @@
 @property (assign, nonatomic) CGFloat xmg_width;
 @property (assign, nonatomic) CGFloat xmg_height;
 
+//是否显示在主窗口
+- (BOOL)isShowingOnKeyWindow;
+
 @end
