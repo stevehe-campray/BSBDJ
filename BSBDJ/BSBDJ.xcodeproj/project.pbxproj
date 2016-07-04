@@ -51,6 +51,8 @@
 		74BB1B471D26463C009E279F /* BSBMeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B461D26463C009E279F /* BSBMeFooterView.swift */; };
 		74BB1B491D2649E2009E279F /* BSBSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B481D2649E2009E279F /* BSBSquare.swift */; };
 		74BB1B4B1D26510A009E279F /* BSBSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B4A1D26510A009E279F /* BSBSquareButton.swift */; };
+		74BB1B4E1D2670F7009E279F /* BSBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB1B4C1D2670F7009E279F /* BSBWebViewController.swift */; };
+		74BB1B4F1D2670F7009E279F /* BSBWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BB1B4D1D2670F7009E279F /* BSBWebViewController.xib */; };
 		74CA746C1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */; };
 		74CA746D1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */; };
 		74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */; };
@@ -150,6 +152,8 @@
 		74BB1B461D26463C009E279F /* BSBMeFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBMeFooterView.swift; sourceTree = "<group>"; };
 		74BB1B481D2649E2009E279F /* BSBSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBSquare.swift; sourceTree = "<group>"; };
 		74BB1B4A1D26510A009E279F /* BSBSquareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBSquareButton.swift; sourceTree = "<group>"; };
+		74BB1B4C1D2670F7009E279F /* BSBWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBWebViewController.swift; sourceTree = "<group>"; };
+		74BB1B4D1D2670F7009E279F /* BSBWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBWebViewController.xib; sourceTree = "<group>"; };
 		74CA746A1CA3BB37007D5A64 /* BSBLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		74CA746B1CA3BB37007D5A64 /* BSBLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		74F1A8431C99441A0098F68F /* BSBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSBFriendTrendsViewController.xib; path = "BSBDJ/FriendTrends(关注)/Controllers/BSBFriendTrendsViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -493,6 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				7418BC4B1C97AA66007D822A /* BSBMeViewController.swift */,
+				74BB1B4C1D2670F7009E279F /* BSBWebViewController.swift */,
+				74BB1B4D1D2670F7009E279F /* BSBWebViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -702,6 +708,7 @@
 			files = (
 				74001B041D1143750025045C /* BSBShowPictureViewController.xib in Resources */,
 				74BB1B431D24C803009E279F /* BSBCommentCell.xib in Resources */,
+				74BB1B4F1D2670F7009E279F /* BSBWebViewController.xib in Resources */,
 				74F1A85C1C9BA9030098F68F /* BSBSubscribeController.xib in Resources */,
 				74F1A84C1C9965090098F68F /* BSBrecomendViewController.xib in Resources */,
 				74F1A8441C99441A0098F68F /* BSBFriendTrendsViewController.xib in Resources */,
@@ -803,6 +810,7 @@
 				74BB1B271D194B58009E279F /* BSBTopicVideoView.swift in Sources */,
 				7418BC601C97D872007D822A /* NSDate+Extension.m in Sources */,
 				748278F21D00083800CB10F1 /* BSBTopic.swift in Sources */,
+				74BB1B4E1D2670F7009E279F /* BSBWebViewController.swift in Sources */,
 				7418BC501C97AB43007D822A /* BSBNavViewController.swift in Sources */,
 				7418BC4C1C97AA66007D822A /* BSBMeViewController.swift in Sources */,
 				74F1A8621C9BAEE50098F68F /* BSBTagInfo.swift in Sources */,

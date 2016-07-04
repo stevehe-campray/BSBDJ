@@ -57,10 +57,11 @@ class BSBMeViewController: UITableViewController {
         self.tableView.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.8)
 //
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
-//        self.tableView.setValue(UITableViewStyle.Grouped, forKeyPath: "style")
+
 //
         self.tableView.registerClass(BSBMeCell.classForCoder(), forCellReuseIdentifier: "me")
-//        // 调整header和footer
+   
+        // 调整header和footer
         self.tableView.sectionHeaderHeight = 0;
         self.tableView.sectionFooterHeight = 10;
         
@@ -83,8 +84,8 @@ class BSBMeViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let  cell : BSBMeCell  = tableView.dequeueReusableCellWithIdentifier("me") as! BSBMeCell
         
+        let  cell : BSBMeCell  = tableView.dequeueReusableCellWithIdentifier("me") as! BSBMeCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         if (indexPath.section == 0) {
             cell.imageView!.image = UIImage(named: "setup-head-default")
@@ -95,16 +96,17 @@ class BSBMeViewController: UITableViewController {
         return cell;
         
     }
+    
     deinit{
+        
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        
     }
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+      
+        
     }
     
 

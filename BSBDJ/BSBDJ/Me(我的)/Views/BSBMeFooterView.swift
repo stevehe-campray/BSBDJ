@@ -55,6 +55,9 @@ class BSBMeFooterView: UIView {
         for i in 0...squares.count - 1 {
             let button = BSBSquareButton()
             button.square = squares[i]
+            
+            button.addTarget(self, action: #selector(BSBMeFooterView.buttonclick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            
             self.addSubview(button)
             
             
@@ -88,6 +91,31 @@ class BSBMeFooterView: UIView {
         self.xmg_height = CGFloat(rows) * buttonH;
         
        NSNotificationCenter.defaultCenter().postNotificationName("initsuccess", object: nil, userInfo: nil)
+    }
+    
+    func buttonclick(sender:BSBSquareButton) {
+        
+        
+        let square : BSBSquare = sender.square!
+        
+        if square.url.hasPrefix("http") {
+          
+            
+            let webvc : BSBWebViewController = BSBWebViewController(nibName:"BSBWebViewController", bundle:nil)
+            webvc.title = square.name
+            webvc.url = square.url
+            // 取出当前的导航控制器
+            
+            let tabBarVc : UITabBarController = UIApplication.sharedApplication().keyWindow?.rootViewController as! UITabBarController
+      
+            let nav : UINavigationController = tabBarVc.selectedViewController as! UINavigationController
+            
+            nav.pushViewController(webvc, animated: true)
+          
+        }else{
+            return
+        }
+
     }
     
     override func drawRect(rect: CGRect) {

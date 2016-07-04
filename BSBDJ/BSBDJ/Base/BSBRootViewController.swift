@@ -46,7 +46,6 @@ class BSBRootViewController: UITabBarController {
         self.setValue(BSBTabBar(), forKeyPath: "tabBar")
         setupChlidviewController()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +62,7 @@ class BSBRootViewController: UITabBarController {
         var attrdictionary:NSDictionary = NSDictionary()
         
 //        attrdictionary.setValue(UIColor.darkGrayColor(), forKey: NSForegroundColorAttributeName)
+        
         attrdictionary = [NSForegroundColorAttributeName:UIColor.darkGrayColor()]
         appearance.setTitleTextAttributes(attrdictionary as? [String : AnyObject], forState: UIControlState.Selected)
         UITabBar.appearance().backgroundImage = UIImage(named:"tabbar-light")
