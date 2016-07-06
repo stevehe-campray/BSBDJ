@@ -57,6 +57,8 @@ class BSBRootViewController: UITabBarController {
     
     override class func initialize(){
       
+        
+        //设置taabr 选中颜色
         let appearance:UITabBarItem = UITabBarItem.appearance()
         
         var attrdictionary:NSDictionary = NSDictionary()
@@ -72,14 +74,19 @@ class BSBRootViewController: UITabBarController {
     
     //设置tabbar上的控制器
     private func setupChlidviewController(){
+        
+        
         //设置精华控制器
         setoneViewConroller(BSBEssenceViewController(), title: "精华", imageName: "tabBar_essence_icon", selectImageName: "tabBar_essence_click_icon")
         //设置新帖控制器
         setoneViewConroller(BSBNewViewController(), title: "最新", imageName: "tabBar_new_icon", selectImageName: "tabBar_new_click_icon")
+     
         //设置关注控制器
-        setoneViewConroller(BSBFriendTrendsViewController(nibName:"BSBFriendTrendsViewController", bundle:nil), title: "关注", imageName: "tabBar_friendTrends_icon", selectImageName: "tabBar_friendTrends_click_icon")
+     setoneViewConroller(BSBFriendTrendsViewController(nibName:"BSBFriendTrendsViewController", bundle:nil), title: "关注", imageName: "tabBar_friendTrends_icon", selectImageName: "tabBar_friendTrends_click_icon")
+        
         //设置个人中心控制器
         setoneViewConroller(BSBMeViewController(style: UITableViewStyle.Grouped), title: "我", imageName: "tabBar_me_icon", selectImageName: "tabBar_me_click_icon");
+        
         
     }
     
