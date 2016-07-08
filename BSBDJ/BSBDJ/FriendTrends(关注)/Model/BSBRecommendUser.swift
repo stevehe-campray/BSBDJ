@@ -14,7 +14,6 @@ class BSBRecommendUser: NSObject {
     var fans_count : NSInteger = 0
     var uid : String = ""
     
-    
     //字典转数组
     class func dict2Model(list: [[String: AnyObject]]) -> [BSBRecommendUser] {
         var models = [BSBRecommendUser]()
@@ -31,7 +30,10 @@ class BSBRecommendUser: NSObject {
         super.init()
         setValuesForKeysWithDictionary(dict)
     }
+    
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
+        
     }
+    
 }
